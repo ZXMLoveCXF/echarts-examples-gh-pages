@@ -1,0 +1,33 @@
+extends layouts/inner
+
+block inner_content
+
+    #left-chart-nav
+        ul
+
+    #explore-container
+        #toolbar
+            #theme
+                span Theme:
+                a(href="./index.html" title="default" class="default")
+                    span
+                a(href="./index.html?theme=light" title="light" class="light")
+                    span
+                a(href="./index.html?theme=dark" title="dark" class="dark")
+                    span
+
+        .chart-list-panel
+
+block extra_js
+
+    script(type='text/javascript', src='./vendors/waypoint.js')
+    script(type='text/javascript', src='./vendors/jquery.lazyload.min.js')
+
+    script(type='text/javascript', src='./javascripts/chart-list-data.js')
+    script(type='text/javascript', src='./javascripts/chart-list-data-gl.js')
+    script(type='text/javascript', src='./javascripts/chart-list.js')
+
+    script(type='text/javascript').
+        document.getElementById('nav-examples').className = 'active';
+
+    script(type='text/javascript' src='./javascripts/hm.js')
